@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Boisson et Vin</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+
+<body>
+
+<header>
+    <h1>🍾 Boisson et Vin</h1>
+
+ <nav>
+        <a href="index.html">Accueil</a>
+        <a href="restaurant.html">Restaurant</a>
+        <a href="Kiosque.html">Kiosque</a>
+        <a href="supermarche.html">Supermarché</a>
+        <a href="boisson et vin.html">boisson et vin</a>
+        <a href="Lait Mablo.html">Lait Mablo</a>
+        <a href="jus mablo.html">jus mablo</a>
+        <a href="poissonnerie.html">Poissonnerie</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<!-- PANIER -->
+<div id="cartBox">
+    <h3>🛒 Panier</h3>
+    <div id="cartItems"></div>
+    <p>Total : <span id="cartTotal">0</span> FCFA</p>
+
+    <button onclick="sendOrder()">Commander</button>
+    <button onclick="clearCart()">Vider</button>
+</div>
+
+<section class="section">
+
+    <h2>🍹 Nos Boissons</h2>
+
+    <div class="menu-container">
+
+        <div class="menu-item">
+            <img src="image/blue pur" alt="blue pur">
+            <h3>bleu pur grand</h3>
+            <p>400 FCFA</p>
+            <button onclick="addToCart('bleu pur',500)">
+                Ajouter au panier
+            </button>
+        </div>
+
+        <div class="menu-item">
+            <img src="image/budweiser" alt="Budweiser">
+            <h3>Budweiser</h3>
+            <p>700 FCFA</p>
+            <button onclick="addToCart('Budweiser',1000)">
+                Ajouter au panier
+            </button>
+        </div>
+
+        <div class="menu-item">
+            <img src="image/celest petit" alt="Celeste petit">
+            <h3>Celeste petit</h3>
+            <p>100 FCFA</p>
+            <button onclick="addToCart('Celeste petit',100)">
+                Ajouter au panier
+            </button>
+        </div>
+
+        <div class="menu-item">
+            <img src="image/celeste" alt="Celeste grand">
+            <h3>Celeste grand</h3>
+            <p>350 FCFA</p>
+            <button onclick="addToCart('Celeste grand',350)">
+                Ajouter au panier
+            </button>
+        </div>
+
+        <div class="menu-item">
+            <img src="image/critaline" alt="Cristaline petit">
+            <h3>Cristaline petit</h3>
+            <p>100 FCFA</p>
+            <button onclick="addToCart('Cristaline petit',100)">
+                Ajouter au panier
+            </button>
+        </div>
+
+        <div class="menu-item">
+            <img src="image/cristaline" alt="Cristaline grand">
+            <h3>Cristaline grand</h3>
+            <p>350 FCFA</p>
+            <button onclick="addToCart('Cristaline grand',350)">
+                Ajouter au panier
+            </button>
+        </div>
+
+        <div class="menu-item">
+            <img src="image/desperados" alt="Desperados">
+            <h3>Desperados</h3>
+            <p>650 FCFA</p>
+            <button onclick="addToCart('Desperados',650)">
+                Ajouter au panier
+            </button>
+        </div>
+
+        <div class="menu-item">
+            <img src="image/heineken" alt="Heineken">
+            <h3>Heineken</h3>
+            <p>650 FCFA</p>
+            <button onclick="addToCart('Heineken',650)">
+                Ajouter au panier
+            </button>
+        </div>
+
+        <div class="menu-item">
+            <img src="image/kirene grand" alt="Kirene grand">
+            <h3>Kirene grand</h3>
+            <p>350 FCFA</p>
+            <button onclick="addToCart('Kirene grand',350)">
+                Ajouter au panier
+            </button>
+        </div>
+
+        <div class="menu-item">
+            <img src="image/kirene petit" alt="Kirene petit">
+            <h3>Kirene petit</h3>
+            <p>100 FCFA</p>
+            <button onclick="addToCart('Kirene petit',100)">
+                Ajouter au panier
+            </button>
+        </div>
+
+        <div class="menu-item">
+            <img src="image/olgane petit" alt="Olgane petit">
+            <h3>Olgane petit</h3>
+            <p>100 FCFA</p>
+            <button onclick="addToCart('Olgane petit',100)">
+                Ajouter au panier
+            </button>
+        </div>
+
+        <div class="menu-item">
+            <img src="image/sanbiteur" alt="Sanbiteur">
+            <h3>Sanbiteur</h3>
+            <p>800 FCFA</p>
+            <button onclick="addToCart('Sanbiteur',500)">
+                Ajouter au panier
+            </button>
+        </div>
+
+        <div class="menu-item">
+            <img src="image/sucess" alt="Succès">
+            <h3>Succès</h3>
+            <p>100 FCFA</p>
+            <button onclick="addToCart('Succès',100)">
+                Ajouter au panier
+            </button>
+        </div>
+        
+        <div class="menu-item">
+            <img src="image/celeste gobelet" alt="Succès">
+            <h3>celeste gobelet</h3>
+            <p>50 FCFA</p>
+            <button onclick="addToCart('Succès',50)">
+                Ajouter au panier
+            </button>
+        </div>
+        <!-- AGOD -->
+         <div class="menu-item">
+             <img src="image/agod" alt="Agod">
+             <h3>Agod</h3>
+             <p></p>
+             <button onclick="addToCart('Agod',0)">Ajouter au panier</button>
+            </div>
+            <div class="menu-item">
+                <img src="image/bois des chantant" alt="Bois des chantant">
+                <h3>Bois des chantant</h3>
+                <p></p>
+                <button onclick="addToCart('Bois des chantant',0)">Ajouter au panier</button>
+            </div>
+
+<div class="menu-item">
+    <img src="image/chemin des papes" alt="Chemin des papes">
+    <h3>Chemin des papes</h3>
+    <p></p>
+    <button onclick="addToCart('Chemin des papes',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/martini" alt="Martini">
+    <h3>Martini</h3>
+    <p></p>
+    <button onclick="addToCart('Martini',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/baron d'arignac" alt="Barond’arignac">
+    <h3>Barond’arignac</h3>
+    <p></p>
+    <button onclick="addToCart('Barond’arignac',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/baudeville vin blanc" alt="Baudeville vin blanc">
+    <h3>Baudeville vin blanc</h3>
+    <p></p>
+    <button onclick="addToCart('Baudeville vin blanc',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/baudeville vin rouge" alt="Baudeville vin rouge">
+    <h3>Baudeville vin rouge</h3>
+    <p></p>
+    <button onclick="addToCart('Baudeville vin rouge',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/bock canette" alt="Bock cannette">
+    <h3>Bock cannette</h3>
+    <p></p>
+    <button onclick="addToCart('Bock cannette',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/bordeau charlotte" alt="Bordeau charlotte">
+    <h3>Bordeau charlotte</h3>
+    <p></p>
+    <button onclick="addToCart('Bordeau charlotte',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/chateau de france sangria" alt="Château de France sangria">
+    <h3>Château de France sangria</h3>
+    <p></p>
+    <button onclick="addToCart('Château de France sangria',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/cody's biere bleu" alt="Cody’s bière bleu">
+    <h3>Cody’s bière bleu</h3>
+    <p></p>
+    <button onclick="addToCart('Cody’s bière bleu',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/cuvé" alt="Cuvé">
+    <h3>Cuvé</h3>
+    <p></p>
+    <button onclick="addToCart('Cuvé',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/despardos cannete" alt="desparados canette">
+    <h3>desparados canette</h3>
+    <p></p>
+    <button onclick="addToCart('desparados canette',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/mangoustant rhum" alt="Mangoustant rhum">
+    <h3>Mangoustant rhum</h3>
+    <p></p>
+    <button onclick="addToCart('Mangoustant rhum',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/pavillon de la reine" alt="Pavillon de la reine">
+    <h3>Pavillon de la reine</h3>
+    <p></p>
+    <button onclick="addToCart('Pavillon de la reine',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/rlg blanc" alt="RLG blanc">
+    <h3>RLG blanc</h3>
+    <p></p>
+    <button onclick="addToCart('RLG blanc',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/rlg rouge" alt="RLG rouge">
+    <h3>RLG rouge</h3>
+    <p></p>
+    <button onclick="addToCart('RLG rouge',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/sangria forte" alt="Sangria forte">
+    <h3>Sangria forte</h3>
+    <p></p>
+    <button onclick="addToCart('Sangria forte',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/wkisky peches" alt="Whiski peche">
+    <h3>Whiski peche</h3>
+    <p></p>
+    <button onclick="addToCart('Whiski peche',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/3x energy" alt="3X énergy">
+    <h3>3X énergy</h3>
+    <p></p>
+    <button onclick="addToCart('3X énergy',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/coca cola bidon" alt="Coca cola bidon">
+    <h3>Coca cola bidon</h3>
+    <p></p>
+    <button onclick="addToCart('Coca cola bidon',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/cody's energie bleu" alt="Cody’s énergy bleu">
+    <h3>Cody’s énergy bleu</h3>
+    <p></p>
+    <button onclick="addToCart('Cody’s énergy bleu',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/cody's energy" alt="Cody’s énergy">
+    <h3>Cody’s énergy</h3>
+    <p></p>
+    <button onclick="addToCart('Cody’s énergy',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/fanta bidon" alt="Fanta bidon">
+    <h3>Fanta bidon</h3>
+    <p></p>
+    <button onclick="addToCart('Fanta bidon',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/ivorio" alt="Ivorio">
+    <h3>Ivorio</h3>
+    <p></p>
+    <button onclick="addToCart('Ivorio',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/sprite bidon" alt="Sprite bidon">
+    <h3>Sprite bidon</h3>
+    <p></p>
+    <button onclick="addToCart('Sprite bidon',0)">Ajouter au panier</button>
+</div>
+<div class="menu-item">
+    <img src="image/world coca canette" alt="World cola canette">
+    <h3>World cola canette</h3>
+    <p></p>
+    <button onclick="addToCart('World cola canette',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/youki cocktail bidon" alt="Youki cocktail bidon">
+    <h3>Youki cocktail bidon</h3>
+    <p></p>
+    <button onclick="addToCart('Youki cocktail bidon',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/youki moka canette" alt="Youki moka canette">
+    <h3>Youki moka canette</h3>
+    <p></p>
+    <button onclick="addToCart('Youki moka canette',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/youki orange canette" alt="Youki orange">
+    <h3>Youki orange</h3>
+    <p></p>
+    <button onclick="addToCart('Youki orange',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/youki tonic bidon" alt="Youki tonic bidon">
+    <h3>Youki tonic bidon</h3>
+    <p></p>
+    <button onclick="addToCart('Youki tonic bidon',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/carbenet" alt="Carbenet">
+    <h3>Carbenet</h3>
+    <p></p>
+    <button onclick="addToCart('Carbenet',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/fanta canette" alt="Fanta canette">
+    <h3>Fanta canette</h3>
+    <p></p>
+    <button onclick="addToCart('Fanta canette',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/fruita" alt="Fruita">
+    <h3>Fruita</h3>
+    <p></p>
+    <button onclick="addToCart('Fruita',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/grand versant" alt="Grand versant">
+    <h3>Grand versant</h3>
+    <p></p>
+    <button onclick="addToCart('Grand versant',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/imperial blue" alt="Impériale Blue">
+    <h3>Impériale Blue</h3>
+    <p></p>
+    <button onclick="addToCart('Impériale Blue',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/la julipe noir" alt="La julipe noir">
+    <h3>La julipe noir</h3>
+    <p></p>
+    <button onclick="addToCart('La julipe noir',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/louis eschenauer" alt="Louis eschenauer">
+    <h3>Louis eschenauer</h3>
+    <p></p>
+    <button onclick="addToCart('Louis eschenauer',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/orangina bidon" alt="Orangina bidon">
+    <h3>Orangina bidon</h3>
+    <p></p>
+    <button onclick="addToCart('Orangina bidon',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/pastis" alt="Pastis">
+    <h3>Pastis</h3>
+    <p></p>
+    <button onclick="addToCart('Pastis',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/red bull" alt="Red bull">
+    <h3>Red bull</h3>
+    <p></p>
+    <button onclick="addToCart('Red bull',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/Schweppes" alt="Schweppes">
+    <h3>Schweppes</h3>
+    <p></p>
+    <button onclick="addToCart('Schweppes',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/sprite canette" alt="Sprite canette">
+    <h3>Sprite canette</h3>
+    <p></p>
+    <button onclick="addToCart('Sprite canette',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/st honoré rhum cola" alt="St Honoré rhum cola">
+    <h3>St Honoré rhum cola</h3>
+    <p></p>
+    <button onclick="addToCart('St Honoré rhum cola',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/st honoré rhume" alt="St Honoré rhum">
+    <h3>St Honoré rhum</h3>
+    <p></p>
+    <button onclick="addToCart('St Honoré rhum',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/vimto" alt="Vimto">
+    <h3>Vimto</h3>
+    <p></p>
+    <button onclick="addToCart('Vimto',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/youki pomme" alt="Youki pomme">
+    <h3>Youki pomme</h3>
+    <p></p>
+    <button onclick="addToCart('Youki pomme',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/youzou" alt="Youzou">
+    <h3>Youzou</h3>
+    <p></p>
+    <button onclick="addToCart('Youzou',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/calao rhume blanc" alt="Calao rhum blanc">
+    <h3>Calao rhum blanc</h3>
+    <p></p>
+    <button onclick="addToCart('Calao rhum blanc',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/coca cola grand" alt="Coca cola grand">
+    <h3>Coca cola grand</h3>
+    <p></p>
+    <button onclick="addToCart('Coca cola grand',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/entinelle" alt="Entinelle">
+    <h3>Entinelle</h3>
+    <p></p>
+    <button onclick="addToCart('Entinelle',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/sprite grand" alt="Sprite grand">
+    <h3>Sprite grand</h3>
+    <p></p>
+    <button onclick="addToCart('Sprite grand',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/orangina grand" alt="Orangina grand">
+    <h3>Orangina grand</h3>
+    <p></p>
+    <button onclick="addToCart('Orangina grand',0)">Ajouter au panier</button>
+</div>
+
+<div class="menu-item">
+    <img src="image/youki orange grand" alt="Youki orange grand">
+    <h3>Youki orange grand</h3>
+    <p></p>
+    <button onclick="addToCart('Youki orange grand',0)">Ajouter au panier</button>
+</div>
+
+
+    </div>
+
+</section>
+
+</body>
+</html>

@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+<header>
+    <h1>Restaurant</h1>
+
+<nav>
+        <a href="index.html">Accueil</a>
+        <a href="restaurant.html">Restaurant</a>
+        <a href="Kiosque.html">Kiosque</a>
+        <a href="supermarche.html">Supermarché</a>
+        <a href="boisson et vin.html">boisson et vin</a>
+        <a href="Lait Mablo.html">Lait Mablo</a>
+        <a href="jus mablo.html">jus mablo</a>
+        <a href="poissonnerie.html">Poissonnerie</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<!-- PANIER -->
+<div id="cartBox">
+
+    <h3>🛒 Panier</h3>
+
+    <div id="cartItems"></div>
+
+    <p>
+        Total :
+        <span id="cartTotal">0</span> FCFA
+    </p>
+
+    <button onclick="sendOrder()">
+        Commander
+    </button>
+
+    <button onclick="clearCart()">
+        Vider
+    </button>
+
+</div>
+
+<!-- MENU -->
+<section class="section">
+
+    <h2>Menu Restaurant</h2>
+
+    <div class="menu-container">
+
+        <!-- Pattes de poulet -->
+        <div class="menu-item">
+            <img src="image/patte de poulet" alt="Pattes de poulet">
+
+            <h3>Pattes de poulet avec attiéké</h3>
+
+            <p>1 patte - 200 FCFA</p>
+            <p>5 pattes - 1000 FCFA</p>
+
+            <button onclick="addToCart('5 pattes de poulet avec attiéké',1000)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Foufou carpe -->
+        <div class="menu-item">
+            <img src="image/UzdxWdX" alt="Foufou carpe">
+
+            <h3>Foufou sauce claire</h3>
+
+            <p>1 boule avec poisson carpe</p>
+
+            <p><strong>1500 FCFA</strong></p>
+
+            <button onclick="addToCart('Foufou carpe',1500)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Foufou saumon 1 boule -->
+        <div class="menu-item">
+            <img src="image/UzdxWdX" alt="Foufou saumon">
+
+            <h3>Foufou sauce claire</h3>
+
+            <p>1 boule avec poisson saumon frais</p>
+
+            <p><strong>1000 FCFA</strong></p>
+
+            <button onclick="addToCart('Foufou saumon 1 boule',1000)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Foufou saumon 2 boules -->
+        <div class="menu-item">
+            <img src="image/UzdxWdX" alt="Foufou saumon">
+
+            <h3>Foufou sauce claire</h3>
+
+            <p>2 boules avec poisson saumon frais</p>
+
+            <p><strong>1500 FCFA</strong></p>
+
+            <button onclick="addToCart('Foufou saumon 2 boules',1500)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Foufou poisson fumé -->
+        <div class="menu-item">
+            <img src="image/fufu-au-poisson-fumé-soupe-légère-et-viande-de-chèvre-afrique-ghana-plat-traditionnel" alt="Foufou poisson fumé">
+
+            <h3>Foufou sauce claire</h3>
+
+            <p>1 boule avec poisson fumé</p>
+
+            <p><strong>1000 FCFA</strong></p>
+
+            <button onclick="addToCart('Foufou poisson fumé 1 boule',1000)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Foufou fumé 2 boules -->
+        <div class="menu-item">
+            <img src="image/fufu-au-poisson-fumé-soupe-légère-et-viande-de-chèvre-afrique-ghana-plat-traditionnel" alt="Foufou fumé">
+
+            <h3>Foufou sauce claire</h3>
+
+            <p>2 boules avec poisson fumé</p>
+
+            <p><strong>1500 FCFA</strong></p>
+
+            <button onclick="addToCart('Foufou poisson fumé 2 boules',1500)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Tchep poisson -->
+        <div class="menu-item">
+            <img src="image/tchep2" alt="Tchep poisson">
+
+            <h3>Tchep avec poisson</h3>
+
+            <p><strong>1000 FCFA</strong></p>
+
+            <button onclick="addToCart('Tchep poisson',1000)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Tchep poulet -->
+        <div class="menu-item">
+            <img src="image/tchep poulet" alt="Tchep poulet">
+
+            <h3>Tchep avec poulet</h3>
+
+            <p><strong>1500 FCFA</strong></p>
+
+            <button onclick="addToCart('Tchep poulet',1500)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Tchep cuisse -->
+        <div class="menu-item">
+            <img src="image/cuisses-poulet-roties-riz-aux-tomates-grains-longs-inde-du-sud-cuit-tomates-sautees-oignon-poudre-piment-rouge-cannelle-curcuma-plaque-noire-table-bois-rustique-espace-copie_268847-995" alt="Tchep cuisse">
+
+            <h3>Tchep avec cuisse de poulet</h3>
+
+            <p><strong>2000 FCFA</strong></p>
+
+            <button onclick="addToCart('Tchep cuisse',2000)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Tchep viande -->
+        <div class="menu-item">
+            <img src="image/image" alt="Tchep viande">
+
+            <h3>Tchep à la viande</h3>
+
+            <p><strong>1500 FCFA</strong></p>
+
+            <button onclick="addToCart('Tchep viande',1500)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Riz poisson -->
+        <div class="menu-item">
+            <img src="image/sauce-graine-recette-bol-traditionnel-riz-300x168" alt="Riz poisson">
+
+            <h3>Riz blanc sauce graine</h3>
+
+            <p>Poisson fumé et frais</p>
+
+            <p><strong>1000 FCFA</strong></p>
+
+            <button onclick="addToCart('Riz sauce graine poisson',1000)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Riz viande 1500 -->
+        <div class="menu-item">
+            <img src="image/5324BOS-Carousel-Sauzen-WEB-771x515" alt="Riz viande">
+
+            <h3>Riz blanc sauce graine</h3>
+
+            <p>Viande 4 morceaux</p>
+
+            <p><strong>1500 FCFA</strong></p>
+
+            <button onclick="addToCart('Riz viande 4 morceaux',1500)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Riz viande 2000 -->
+        <div class="menu-item">
+            <img src="image/5324BOS-Carousel-Sauzen-WEB-771x515" alt="Riz viande">
+
+            <h3>Riz blanc sauce graine</h3>
+
+            <p>Viande 6 morceaux</p>
+
+            <p><strong>2000 FCFA</strong></p>
+
+            <button onclick="addToCart('Riz viande 6 morceaux',2000)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Poulet braisé -->
+        <div class="menu-item">
+            <img src="image/poulet braisé" alt="Poulet braisé">
+
+            <h3>Poulet braisé</h3>
+
+            <p>Accompagnement séparé</p>
+
+            <p><strong>1500 FCFA</strong></p>
+
+            <button onclick="addToCart('Poulet braisé',1500)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Dindon -->
+        <div class="menu-item">
+            <img src="image/dindon grillé" alt="Dindon grillé">
+
+            <h3>Dindon grillé</h3>
+
+            <p><strong>1500 FCFA</strong></p>
+
+            <button onclick="addToCart('Dindon grillé',1500)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Alloco -->
+        <div class="menu-item">
+            <img src="image/alloco" alt="Alloco">
+
+            <h3>Alloco simple</h3>
+
+            <p><strong>300 FCFA</strong></p>
+
+            <button onclick="addToCart('Alloco simple',300)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Alloco oeuf -->
+        <div class="menu-item">
+            <img src="image/alloco" alt="Alloco oeuf">
+
+            <h3>Alloco avec œufs</h3>
+
+            <p>2 œufs ou pattes de poulet</p>
+
+            <p><strong>500 FCFA</strong></p>
+
+            <button onclick="addToCart('Alloco avec oeufs',500)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Alloco poulet -->
+        <div class="menu-item">
+            <img src="image/alloco-poulet-grille" alt="Alloco poulet">
+
+            <h3>Alloco avec poulet</h3>
+
+            <p><strong>1500 FCFA</strong></p>
+
+            <button onclick="addToCart('Alloco avec poulet',1500)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Frites -->
+        <div class="menu-item">
+            <img src="image/fritte" alt="Frites">
+
+            <h3>Frites simple</h3>
+
+            <p><strong>500 FCFA</strong></p>
+
+            <button onclick="addToCart('Frites simple',500)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Frites oeufs -->
+        <div class="menu-item">
+            <img src="image/popote-de-petit-bohnium-frites-maison-a-l-oeuf-battu-popote-de-petit-bohnium" alt="Frites oeufs">
+
+            <h3>Frites avec œufs</h3>
+
+            <p><strong>700 FCFA</strong></p>
+
+            <button onclick="addToCart('Frites oeufs',700)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Frites poulet -->
+        <div class="menu-item">
+            <img src="image/vue-rapprochee-laterale-assiette-orange-fastfood-ailes-poulet-frites-appetissantes-citron-trois-bols-differents-types-sauces-table-sombre_140725-110541" alt="Frites poulet">
+
+            <h3>Frites avec poulet grillé</h3>
+
+            <p><strong>1500 FCFA</strong></p>
+
+            <button onclick="addToCart('Frites poulet',1500)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Foutou viande -->
+        <div class="menu-item">
+            <img src="image/foutou sauce graine" alt="Foutou viande">
+
+            <h3>Foutou sauce graine</h3>
+
+            <p>Avec viande</p>
+
+            <p><strong>1500 FCFA</strong></p>
+
+            <button onclick="addToCart('Foutou viande',1500)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Foutou poisson -->
+        <div class="menu-item">
+            <img src="image/foufou" alt="Foutou poisson">
+
+            <h3>Foutou sauce graine</h3>
+
+            <p>Poisson fumé ou frais</p>
+
+            <p><strong>1000 FCFA</strong></p>
+
+            <button onclick="addToCart('Foutou poisson',1000)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Poisson grillé -->
+        <div class="menu-item">
+            <img src="image/foufou" alt="Poisson grillé">
+
+            <h3>Poisson grillé avec attiéké</h3>
+
+            <p>À partir de 1000 FCFA</p>
+
+            <button onclick="addToCart('Poisson grillé',1000)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Poisson braisé -->
+        <div class="menu-item">
+            <img src="image/poisson braisé" alt="Poisson braisé">
+
+            <h3>Poisson braisé avec attiéké</h3>
+
+            <p><strong>2500 FCFA</strong></p>
+
+            <button onclick="addToCart('Poisson braisé',2500)">
+                Ajouter
+            </button>
+        </div>
+        <!-- Riz sauce gouagouassou poisson -->
+<div class="menu-item">
+    <img src="image/riz gouagouassou" alt="Riz gouagouassou poisson">
+
+    <h3>Riz blanc sauce gouagouassou</h3>
+
+    <p>Poisson fumé et frais</p>
+
+    <p><strong>1000 FCFA</strong></p>
+
+    <button onclick="addToCart('Riz sauce gouagouassou poisson',1000)">
+        Ajouter
+    </button>
+</div>
+
+<!-- Riz sauce gouagouassou viande 4 -->
+<div class="menu-item">
+    <img src="image/sauce-gouagouassou-Ivoirienne-1-800x445" alt="Riz gouagouassou viande">
+
+    <h3>Riz blanc sauce gouagouassou</h3>
+
+    <p>Viande 4 morceaux</p>
+
+    <p><strong>1500 FCFA</strong></p>
+
+    <button onclick="addToCart('Riz sauce gouagouassou viande 4 morceaux',1500)">
+        Ajouter
+    </button>
+</div>
+
+<!-- Riz sauce gouagouassou viande 6 -->
+<div class="menu-item">
+    <img src="image/sauce-gouagouassou-Ivoirienne-1-800x445" alt="Riz gouagouassou viande">
+
+    <h3>Riz blanc sauce gouagouassou</h3>
+
+    <p>Viande 6 morceaux</p>
+
+    <p><strong>2000 FCFA</strong></p>
+
+    <button onclick="addToCart('Riz sauce gouagouassou viande 6 morceaux',2000)">
+        Ajouter
+    </button>
+</div>
+
+<!-- Foutou gouagouassou viande -->
+<div class="menu-item">
+    <img src="image/foutou gouagouassou" alt="Foutou gouagouassou viande">
+
+    <h3>Foutou sauce gouagouassou</h3>
+
+    <p>Avec viande (1 pain)</p>
+
+    <p><strong>1500 FCFA</strong></p>
+
+    <button onclick="addToCart('Foutou gouagouassou viande',1500)">
+        Ajouter
+    </button>
+</div>
+
+<!-- Foutou gouagouassou poisson 1 -->
+<div class="menu-item">
+    <img src="image/capture-foutou-sauce-gouagouassou" alt="Foutou gouagouassou poisson">
+
+    <h3>Foutou sauce gouagouassou</h3>
+
+    <p>Poisson fumé ou frais (1 pain)</p>
+
+    <p><strong>1000 FCFA</strong></p>
+
+    <button onclick="addToCart('Foutou gouagouassou poisson 1 pain',1000)">
+        Ajouter
+    </button>
+</div>
+
+<!-- Foutou gouagouassou poisson 2 -->
+<div class="menu-item">
+    <img src="image/d89131638f677654b466c390e5e5a57b" alt="Foutou gouagouassou poisson">
+
+    <h3>Foutou sauce gouagouassou</h3>
+
+    <p>Poisson fumé ou frais (2 pains)</p>
+
+    <p><strong>1500 FCFA</strong></p>
+
+    <button onclick="addToCart('Foutou gouagouassou poisson 2 pains',1500)">
+        Ajouter
+    </button>
+</div>
+
+<!-- Foutou gouagouassou fumé -->
+<div class="menu-item">
+    <img src="image/33066-d33e6fe51d1ace4fcca45ffa111ea08c_xl" alt="Foutou gouagouassou fumé">
+
+    <h3>Foutou sauce gouagouassou</h3>
+
+    <p>Poisson fumé (2 pains)</p>
+
+    <p><strong>2000 FCFA</strong></p>
+
+    <button onclick="addToCart('Foutou gouagouassou fumé',2000)">
+        Ajouter
+    </button>
+</div>
+
+<!-- Riz sauce feuille poisson -->
+<div class="menu-item">
+    <img src="image/image (1)" alt="Riz sauce feuille poisson">
+
+    <h3>Riz blanc sauce feuille</h3>
+
+    <p>Poisson fumé et frais</p>
+
+    <p><strong>1000 FCFA</strong></p>
+
+    <button onclick="addToCart('Riz sauce feuille poisson',1000)">
+        Ajouter
+    </button>
+</div>
+
+<!-- Riz sauce feuille viande 4 -->
+<div class="menu-item">
+    <img src="image/6ecbae2bb4101d0c831d3c1b2d40d47f" alt="Riz sauce feuille viande">
+
+    <h3>Riz blanc sauce feuille</h3>
+
+    <p>Viande 4 morceaux</p>
+
+    <p><strong>1500 FCFA</strong></p>
+
+    <button onclick="addToCart('Riz sauce feuille viande 4 morceaux',1500)">
+        Ajouter
+    </button>
+</div>
+
+<!-- Riz sauce feuille viande 6 -->
+<div class="menu-item">
+    <img src="image/6ecbae2bb4101d0c831d3c1b2d40d47f" alt="Riz sauce feuille viande">
+
+    <h3>Riz blanc sauce feuille</h3>
+
+    <p>Viande 6 morceaux</p>
+
+    <p><strong>2000 FCFA</strong></p>
+
+    <button onclick="addToCart('Riz sauce feuille viande 6 morceaux',2000)">
+        Ajouter
+    </button>
+</div>
+<!-- Riz sauce djoublé poisson -->
+<div class="menu-item">
+    <img src="image/image (2)" alt="Riz sauce djoublé poisson">
+
+    <h3>Riz blanc sauce djoublé</h3>
+
+    <p>Poisson fumé et frais</p>
+
+    <p><strong>1000 FCFA</strong></p>
+
+    <button onclick="addToCart('Riz sauce djoublé poisson',1000)">
+        Ajouter
+    </button>
+</div>
+
+<!-- Riz sauce djoublé viande 4 -->
+<div class="menu-item">
+    <img src="image/image (2)" alt="Riz sauce djoublé viande">
+
+    <h3>Riz blanc sauce djoublé</h3>
+
+    <p>Viande 4 morceaux</p>
+
+    <p><strong>1500 FCFA</strong></p>
+
+    <button onclick="addToCart('Riz sauce djoublé viande 4 morceaux',1500)">
+        Ajouter
+    </button>
+</div>
+
+<!-- Riz sauce djoublé viande 6 -->
+<div class="menu-item">
+    <img src="image/image (2)" alt="Riz sauce djoublé viande">
+
+    <h3>Riz blanc sauce djoublé</h3>
+
+    <p>Viande 6 morceaux</p>
+
+    <p><strong>2000 FCFA</strong></p>
+
+    <button onclick="addToCart('Riz sauce djoublé viande 6 morceaux',2000)">
+        Ajouter
+    </button>
+</div>
+
+<!-- Riz sauce arachide poisson -->
+<div class="menu-item">
+    <img src="image/sauce-darachides-au-poisson-fumé-14-1024x683" alt="Riz sauce arachide poisson">
+
+    <h3>Riz blanc sauce arachide</h3>
+
+    <p>Poisson fumé et frais</p>
+
+    <p><strong>1000 FCFA</strong></p>
+
+    <button onclick="addToCart('Riz sauce arachide poisson',1000)">
+        Ajouter
+    </button>
+</div>
+
+<!-- Riz sauce arachide viande -->
+<div class="menu-item">
+    <img src="image/sauce-darachides-au-poisson-fumé-14-1024x683" alt="Riz sauce arachide viande">
+
+    <h3>Riz blanc sauce arachide</h3>
+
+    <p>Viande 4 morceaux</p>
+
+    <p><strong>1500 FCFA</strong></p>
+
+    <button onclick="addToCart('Riz sauce arachide viande 4 morceaux',1500)">
+        Ajouter
+    </button>
+</div>
+
+<!-- Riz sauce arachide viande 6 -->
+<div class="menu-item">
+    <img src="image/sauce-darachides-au-poisson-fumé-14-1024x683" alt="Riz sauce arachide viande">
+
+    <h3>Riz blanc sauce arachide</h3>
+
+    <p>Viande 6 morceaux</p>
+
+    <p><strong>2000 FCFA</strong></p>
+
+    <button onclick="addToCart('Riz sauce arachide viande 6 morceaux',2000)">
+        Ajouter
+    </button>
+</div>
+
+<!-- Foutou sauce arachide viande -->
+<div class="menu-item">
+    <img src="image/073c66b3179dd007cf7a9c11920a54ec" alt="Foutou sauce arachide viande">
+
+    <h3>Foutou sauce arachide</h3>
+
+    <p>Avec viande (1 pain)</p>
+
+    <p><strong>1500 FCFA</strong></p>
+
+    <button onclick="addToCart('Foutou sauce arachide viande',1500)">
+        Ajouter
+    </button>
+</div>
+
+<!-- Foutou sauce arachide poisson -->
+<div class="menu-item">
+    <img src="image/073c66b3179dd007cf7a9c11920a54ec" alt="Foutou sauce arachide poisson">
+
+    <h3>Foutou sauce arachide</h3>
+
+    <p>Poisson fumé ou frais (1 pain)</p>
+
+    <p><strong>1000 FCFA</strong></p>
+
+    <button onclick="addToCart('Foutou sauce arachide poisson 1 pain',1000)">
+        Ajouter
+    </button>
+</div>
+
+<!-- Foutou sauce arachide poisson 2 -->
+<div class="menu-item">
+    <img src="image/073c66b3179dd007cf7a9c11920a54ec" alt="Foutou sauce arachide poisson">
+
+    <h3>Foutou sauce arachide</h3>
+
+    <p>Poisson fumé ou frais (2 pains)</p>
+
+    <p><strong>1500 FCFA</strong></p>
+
+    <button onclick="addToCart('Foutou sauce arachide poisson 2 pains',1500)">
+        Ajouter
+    </button>
+</div>
+
+<!-- Foutou sauce arachide fumé -->
+<div class="menu-item">
+    <img src="image/073c66b3179dd007cf7a9c11920a54ec" alt="Foutou sauce arachide fumé">
+
+    <h3>Foutou sauce arachide</h3>
+
+    <p>Poisson fumé (2 pains)</p>
+
+    <p><strong>2000 FCFA</strong></p>
+
+    <button onclick="addToCart('Foutou sauce arachide fumé',2000)">
+        Ajouter
+    </button>
+</div>
+<!-- Riz aubergine poisson -->
+<div class="menu-item">
+    <img src="image/" alt="Riz aubergine poisson">
+
+    <h3>Riz blanc sauce aubergines</h3>
+
+    <p>Poisson fumé et frais ou soupe de carpes</p>
+
+    <p><strong>1000 FCFA</strong></p>
+
+    <button onclick="addToCart('Riz sauce aubergines poisson',1000)">
+        Ajouter
+    </button>
+</div>
+
+<!-- Riz aubergine viande 4 morceaux -->
+<div class="menu-item">
+    <img src="image/riz-aubergine-viande.jpg" alt="Riz aubergine viande">
+
+    <h3>Riz blanc sauce aubergines</h3>
+
+    <p>Viande ou soupe de carpes (4 morceaux)</p>
+
+    <p><strong>1500 FCFA</strong></p>
+
+    <button onclick="addToCart('Riz sauce aubergines viande 4 morceaux',1500)">
+        Ajouter
+    </button>
+</div>
+
+<!-- Riz aubergine viande 6 morceaux -->
+<div class="menu-item">
+    <img src="image/riz-aubergine-viande.jpg" alt="Riz aubergine viande">
+
+    <h3>Riz blanc sauce aubergines</h3>
+
+    <p>Viande ou soupe de carpes (6 morceaux)</p>
+
+    <p><strong>2000 FCFA</strong></p>
+
+    <button onclick="addToCart('Riz sauce aubergines viande 6 morceaux',2000)">
+        Ajouter
+    </button>
+</div>
+
+<!-- Foutou aubergine viande -->
+<div class="menu-item">
+    <img src="image/4a35fcf2cd0bf4c3399bc35170cc78f1" alt="Foutou aubergine viande">
+
+    <h3>Foutou sauce aubergines</h3>
+
+    <p>Viande ou soupe de carpe (1 pain)</p>
+
+    <p><strong>1500 FCFA</strong></p>
+
+    <button onclick="addToCart('Foutou sauce aubergines viande',1500)">
+        Ajouter
+    </button>
+</div>
+
+<!-- Foutou aubergine poisson 1 pain -->
+<div class="menu-item">
+    <img src="image/4a35fcf2cd0bf4c3399bc35170cc78f1" alt="Foutou aubergine poisson">
+
+    <h3>Foutou sauce aubergines</h3>
+
+    <p>Poisson fumé ou soupe de carpe (1 pain)</p>
+
+    <p><strong>1000 FCFA</strong></p>
+
+    <button onclick="addToCart('Foutou sauce aubergines poisson 1 pain',1000)">
+        Ajouter
+    </button>
+</div>
+
+<!-- Foutou arachide soupe de carpe 2 pains -->
+<div class="menu-item">
+    <img src="image/4a35fcf2cd0bf4c3399bc35170cc78f1" alt="Foutou arachide carpe">
+
+    <h3>Foutou sauce arachide</h3>
+
+    <p>Ou soupe de carpes (2 pains)</p>
+
+    <p><strong>1500 FCFA</strong></p>
+
+    <button onclick="addToCart('Foutou sauce arachide soupe de carpes',1500)">
+        Ajouter
+    </button>
+</div>
+
+<!-- Foutou aubergine 2 pains -->
+<div class="menu-item">
+    <img src="image/4a35fcf2cd0bf4c3399bc35170cc78f1" alt="Foutou aubergine">
+
+    <h3>Foutou sauce aubergines</h3>
+
+    <p>Poisson fumé ou soupe de carpe (2 pains)</p>
+
+    <p><strong>2000 FCFA</strong></p>
+
+    <button onclick="addToCart('Foutou sauce aubergines 2 pains',2000)">
+        Ajouter
+    </button>
+</div>
+
+    </div>
+
+</section>
+
+</body>
+</html>

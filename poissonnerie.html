@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+<title>Poissonnerie</title>
+
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+
+<body>
+
+<header>
+    <h1>Poissonnerie</h1>
+
+<nav>
+        <a href="index.html">Accueil</a>
+        <a href="restaurant.html">Restaurant</a>
+        <a href="Kiosque.html">Kiosque</a>
+        <a href="supermarche.html">Supermarché</a>
+        <a href="boisson et vin.html">boisson et vin</a>
+        <a href="Lait Mablo.html">Lait Mablo</a>
+        <a href="jus mablo.html">jus mablo</a>
+        <a href="poissonnerie.html">Poissonnerie</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<!-- PANIER -->
+<div id="cartBox">
+
+    <h3>🛒 Panier</h3>
+
+    <div id="cartItems"></div>
+
+    <p>
+        Total :
+        <span id="cartTotal"></span> FCFA
+    </p>
+
+    <button onclick="sendOrder()">
+        Commander
+    </button>
+
+    <button onclick="clearCart()">
+        Vider
+    </button>
+
+</div>
+
+<!-- SECTION POISSONNERIE -->
+<section class="section">
+
+    <h2>🐟 Poissonnerie</h2>
+
+    <div class="menu-container">
+
+        <!-- Poisson carpe grand -->
+        <div class="menu-item">
+            <img src="image/carpe grand" alt="Poisson carpe grand">
+
+            <h3>Poisson carpe grand</h3>
+
+            <p><strong>1500frs</strong></p>
+
+            <button onclick="addToCart('Poisson carpe grand',0)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Poisson carpe petit -->
+        <div class="menu-item">
+            <img src="image/carpe petit" alt="Poisson carpe petit">
+
+            <h3>Poisson carpe petit</h3>
+
+            <p><strong>1500frs</strong></p>
+
+            <button onclick="addToCart('Poisson carpe petit',0)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Thon blanc grand -->
+        <div class="menu-item">
+            <img src="image/thon blanc grand" alt="Thon blanc grand">
+
+            <h3>Thon blanc grand</h3>
+
+            <p><strong>2000frs le kg </strong></p>
+
+            <button onclick="addToCart('Thon blanc grand',0)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Thon blanc petit -->
+        <div class="menu-item">
+            <img src="image/thon blanc petit" alt="Thon blanc petit">
+
+            <h3>Thon blanc petit</h3>
+
+            <p><strong>2000frs le kg</strong></p>
+
+            <button onclick="addToCart('Thon blanc petit',0)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Thon rouge -->
+        <div class="menu-item">
+            <img src="image/thon rouge" alt="Thon rouge">
+
+            <h3>Thon rouge</h3>
+
+            <p><strong>1800frs</strong></p>
+
+            <button onclick="addToCart('Thon rouge',0)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Poisson sosso grand -->
+        <div class="menu-item">
+            <img src="image/soso grand" alt="Poisson sosso grand">
+
+            <h3>Poisson sosso grand</h3>
+
+            <p><strong>3500frs</strong></p>
+
+            <button onclick="addToCart('Poisson sosso grand',0)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Poisson sosso petit -->
+        <div class="menu-item">
+            <img src="image/sosso petit" alt="Poisson sosso petit">
+
+            <h3>Poisson sosso petit</h3>
+
+            <p><strong>2000frs</strong></p>
+
+            <button onclick="addToCart('Poisson sosso petit',0)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Poisson Somon -->
+        <div class="menu-item">
+            <img src="image/poisson saumon" alt="Poisson Somon">
+
+            <h3>Poisson Somon</h3>
+
+            <p><strong>2200frs</strong></p>
+
+            <button onclick="addToCart('Poisson Somon',0)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Maquereau -->
+        <div class="menu-item">
+            <img src="image/maqueraux" alt="Maquereau">
+
+            <h3>Maquereau</h3>
+
+            <p><strong>1800frs</strong></p>
+
+            <button onclick="addToCart('Maquereau',0)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Poisson Lorch -->
+        <div class="menu-item">
+            <img src="image/lorsh" alt="Poisson Lorch">
+
+            <h3>Poisson Lorch</h3>
+
+            <p><strong>2500frs</strong></p>
+
+            <button onclick="addToCart('Poisson Lorch',0)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Poisson st pierre -->
+        <div class="menu-item">
+            <img src="image/st pierre" alt="Poisson st pierre">
+
+            <h3>Poisson st pierre</h3>
+
+            <p><strong>3500frs</strong></p>
+
+            <button onclick="addToCart('Poisson st pierre',0)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Poisson belle dame -->
+        <div class="menu-item">
+            <img src="image/belle dame" alt="Poisson belle dame">
+
+            <h3>Poisson belle dame</h3>
+
+            <p><strong>1800frs</strong></p>
+
+            <button onclick="addToCart('Poisson belle dame',0)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Capitaine -->
+        <div class="menu-item">
+            <img src="image/capitaine" alt="Capitaine">
+
+            <h3>Capitaine</h3>
+
+            <p><strong>3500frs</strong></p>
+
+            <button onclick="addToCart('Capitaine',0)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Appolo grand -->
+        <div class="menu-item">
+            <img src="image/appolo grand" alt="Appolo grand">
+
+            <h3>Appolo grand</h3>
+
+            <p><strong>1700frs</strong></p>
+
+            <button onclick="addToCart('Appolo grand',0)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Appolo petit -->
+        <div class="menu-item">
+            <img src="image/appolo petit" alt="Appolo petit">
+
+            <h3>Appolo petit</h3>
+
+            <p><strong>1700frs</strong></p>
+
+            <button onclick="addToCart('Appolo petit',0)">
+                Ajouter
+            </button>
+        </div>
+
+        <!-- Poisson Brochet -->
+        <div class="menu-item">
+            <img src="image/brochet" alt="Poisson Brochet">
+
+            <h3>Poisson Brochet</h3>
+
+            <p><strong>3500frs</strong></p>
+
+            <button onclick="addToCart('Poisson Brochet',0)">
+                Ajouter
+            </button>
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>

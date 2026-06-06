@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Supermarché - Mablo Market</title>
+
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>lait mablo</h1>
+    
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="restaurant.html">Restaurant</a>
+        <a href="Kiosque.html">Kiosque</a>
+        <a href="supermarche.html">Supermarché</a>
+        <a href="boisson et vin.html">boisson et vin</a>
+        <a href="Lait Mablo.html">Lait Mablo</a>
+        <a href="jus mablo.html">jus mablo</a>
+        <a href="poissonnerie.html">Poissonnerie</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+</header>
+<!-- PANIER -->
+<div id="cartBox">
+    <h3>🛒 Panier</h3>
+    <div id="cartItems"></div>
+    <p>Total : <span id="cartTotal">0</span> FCFA</p>
+
+    <button onclick="sendOrder()">Commander</button>
+    <button onclick="clearCart()">Vider</button>
+</div>
+<section class="section">
+
+    <h2>Lait mablo </h2>
+    
+    <div class="menu-container">
+
+    <!-- Yaourt Fraise -->
+    <div class="menu-item">
+        <img src="image/yaourt a la fraise">
+        <h3>Yaourt à la fraise</h3>
+        <p>500 FCFA</p>
+        <button onclick="addToCart('Yaourt à la fraise',500)">
+            Ajouter au panier
+        </button>
+    </div>
+
+    <!-- Yaourt Menthe -->
+    <div class="menu-item">
+        <img src="image/yaourt a la menthe">
+        <h3>Yaourt à la menthe</h3>
+        <p>500 FCFA</p>
+        <button onclick="addToCart('Yaourt à la menthe',500)">
+            Ajouter au panier
+        </button>
+    </div>
+
+    <!-- Yaourt Chocolat -->
+    <div class="menu-item">
+        <img src="image/yaourt au chocalat">
+        <h3>Yaourt au chocolat</h3>
+        <p>500 FCFA</p>
+        <button onclick="addToCart('Yaourt au chocolat',500)">
+            Ajouter au panier
+        </button>
+    </div>
+
+    <!-- Degué Couscous -->
+    <div class="menu-item">
+        <img src="image/degué couscous">
+        <h3>Degué au couscous</h3>
+        <p>500 FCFA</p>
+        <button onclick="addToCart('Degué au couscous',500)">
+            Ajouter au panier
+        </button>
+    </div>
+
+    <!-- Lait Mablo -->
+    <div class="menu-item">
+        <img src="image/lait">
+        <h3>Lait Mablo</h3>
+        <p>500 FCFA</p>
+        <button onclick="addToCart('Lait Mablo',500)">
+            Ajouter au panier
+        </button>
+    </div>
+
+     <!-- deguè -->
+    <div class="menu-item">
+        <img src="image/degué">
+        <h3>degué</h3>
+        <p>500 FCFA</p>
+        <button onclick="addToCart('degué',500)">
+            Ajouter au panier
+        </button>
+    </div>
+
+</div>

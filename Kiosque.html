@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Kiosque</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+
+<body>
+
+<header>
+    <h1>Kiosque</h1>
+
+<nav>
+        <a href="index.html">Accueil</a>
+        <a href="restaurant.html">Restaurant</a>
+        <a href="Kiosque.html">Kiosque</a>
+        <a href="supermarche.html">Supermarché</a>
+        <a href="boisson et vin.html">boisson et vin</a>
+        <a href="Lait Mablo.html">Lait Mablo</a>
+        <a href="jus mablo.html">jus mablo</a>
+        <a href="poissonnerie.html">Poissonnerie</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<!-- PANIER -->
+<div id="cartBox">
+    <h3>🛒 Panier</h3>
+    <div id="cartItems"></div>
+    <p>Total : <span id="cartTotal">0</span> FCFA</p>
+
+    <button onclick="sendOrder()">Commander</button>
+    <button onclick="clearCart()">Vider</button>
+</div>
+
+<section class="section">
+
+    <h2>☕ Notre Kiosque</h2>
+
+    <div class="menu-container">
+
+        <!-- Spaghetti rognon -->
+        <div class="menu-item">
+            <img src="image/spa rognon">
+            <h3>Spaghetti rognon</h3>
+            <p>600 FCFA</p>
+            <button onclick="addToCart('Spaghetti rognon',600)">
+                Ajouter au panier
+            </button>
+        </div>
+
+        <!-- Spaghetti foie -->
+        <div class="menu-item">
+            <img src="image/spa.jpg">
+            <h3>Spaghetti foie</h3>
+            <p>600 FCFA</p>
+            <button onclick="addToCart('Spaghetti foie',600)">
+                Ajouter au panier
+            </button>
+        </div>
+
+        <!-- Spaghetti omelette -->
+        <div class="menu-item">
+            <img src="image/spa oeuf">
+            <h3>Spaghetti omelette</h3>
+            <p>600 FCFA</p>
+            <button onclick="addToCart('Spaghetti omelette',600)">
+                Ajouter au panier
+            </button>
+        </div>
+
+        <!-- Petit pois spaghetti -->
+        <div class="menu-item">
+             <img src="image/spaghettis-au-thon-tomates-et-petits-pois-1">
+            <h3>Petit pois + spaghetti</h3>
+            <p>1000 FCFA</p>
+            <button onclick="addToCart('Petit poids avec spaguetti',1000)">
+                Ajouter au panier
+            </button>
+        </div>
+
+        <!-- Petit pois foie -->
+        <div class="menu-item">
+            <img src="image/petit poids avec foi">
+            <h3>Petit pois + foie</h3>
+            <p>1000 FCFA</p>
+            <button onclick="addToCart('Petit poids avec foi',1000)">
+                Ajouter au panier
+            </button>
+        </div>
+
+        <!-- Petit pois rognon -->
+        <div class="menu-item">
+            <img src="image/avec foi">
+            <h3>Petit pois + rognon</h3>
+            <p>1000 FCFA</p>
+            <button onclick="addToCart('Petit poids avec rognon',1000)">
+                Ajouter au panier
+            </button>
+        </div>
+
+        <!-- Café au lait petit -->
+        <div class="menu-item">
+            <img src="image/café au lait">
+            <h3>Café au lait (petit)</h3>
+            <p>600 FCFA</p>
+            <button onclick="addToCart('Café au lait petit tasse',600)">
+                Ajouter au panier
+            </button>
+        </div>
+
+        <!-- Café au lait grand -->
+        <div class="menu-item">
+            <img src="image/café au lait">
+            <h3>Café au lait (grand)</h3>
+            <p>1000 FCFA</p>
+            <button onclick="addToCart('Café au lait grande tasse',1000)">
+                Ajouter au panier
+            </button>
+        </div>
+
+        <!-- Café noir -->
+       <div class="menu-item">
+            <img src="image/café noir">
+            <h3>Café noir</h3>
+            <p>200 FCFA</p>
+            <button onclick="addToCart('Café noir',200)">
+                Ajouter au panier
+            </button>
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>

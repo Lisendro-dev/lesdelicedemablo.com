@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Boisson et Vin</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+
+<body>
+
+<header>
+    <h1>🍾 Boisson et Vin</h1>
+
+<nav>
+        <a href="index.html">Accueil</a>
+        <a href="restaurant.html">Restaurant</a>
+        <a href="Kiosque.html">Kiosque</a>
+        <a href="supermarche.html">Supermarché</a>
+        <a href="boisson et vin.html">boisson et vin</a>
+        <a href="Lait Mablo.html">Lait Mablo</a>
+        <a href="jus mablo.html">jus mablo</a>
+        <a href="poissonnerie.html">Poissonnerie</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+<!-- PANIER -->
+<div id="cartBox">
+    <h3>🛒 Panier</h3>
+    <div id="cartItems"></div>
+    <p>Total : <span id="cartTotal">0</span> FCFA</p>
+
+    <button onclick="sendOrder()">Commander</button>
+    <button onclick="clearCart()">Vider</button>
+</div>
+<div class="menu-container">
+
+    <!-- PETIT BIDON 250 ML -->
+
+    <div class="menu-item">
+        <img src="image/citron250.jpg">
+        <h3>Jus Citron 250 ml</h3>
+        <p>350 FCFA</p>
+        <button onclick="addToCart('Jus Citron 250 ml',350)">Ajouter au panier</button>
+    </div>
+
+    <div class="menu-item">
+        <img src="image/baoba 250ml">
+        <h3>Jus Baobab 250 ml</h3>
+        <p>350 FCFA</p>
+        <button onclick="addToCart('Jus Baobab 250 ml',350)">Ajouter au panier</button>
+    </div>
+        <div class="menu-item">
+        <img src="image/passion 250ml">
+        <h3>Jus de passion 250 ml</h3>
+        <p>350 FCFA</p>
+        <button onclick="addToCart('Jus de passion 250 ml',350)">Ajouter au panier</button>
+    </div>
+
+    <div class="menu-item">
+        <img src="image/gnamakou 250ml">
+        <h3>Jus Gnamakou 250 ml</h3>
+        <p>350 FCFA</p>
+        <button onclick="addToCart('Jus Gnamakou 250 ml',350)">Ajouter au panier</button>
+    </div>
+
+    <div class="menu-item">
+        <img src="image/bissap 250ml">
+        <h3>Jus Bissap 250 ml</h3>
+        <p>250 FCFA</p>
+        <button onclick="addToCart('Jus Bissap 250 ml',250)">Ajouter au panier</button>
+    </div>
+
+    <div class="menu-item">
+        <img src="image/tomi 205ml">
+        <h3>Jus Tomi 250 ml</h3>
+        <p>250 FCFA</p>
+        <button onclick="addToCart('Jus Tomi 250 ml',250)">Ajouter au panier</button>
+    </div>
+
+    <!-- BIDON MOYEN 330 ML -->
+
+    <div class="menu-item">
+        <img src="image/citron330.jpg">
+        <h3>Jus Citron 330 ml</h3>
+        <p>500 FCFA</p>
+        <button onclick="addToCart('Jus Citron 330 ml',500)">Ajouter au panier</button>
+    </div>
+
+    <div class="menu-item">
+        <img src="image/baobab330.jpg">
+        <h3>Jus Baobab 330 ml</h3>
+        <p>500 FCFA</p>
+        <button onclick="addToCart('Jus Baobab 330 ml',500)">Ajouter au panier</button>
+    </div>
+
+    <div class="menu-item">
+        <img src="image/menthe au lait 330ml">
+        <h3>menthe au lait 330ml</h3>
+        <p>500 FCFA</p>
+        <button onclick="addToCart('menthe au lait 330ml',500)">Ajouter au panier</button>
+    </div>
+
+    <div class="menu-item">
+        <img src="image/bissap 330ml">
+        <h3>Jus Bissap 330 ml</h3>
+        <p>350 FCFA</p>
+        <button onclick="addToCart('Jus Bissap 330 ml',350)">Ajouter au panier</button>
+    </div>
+        <div class="menu-item">
+        <img src="image/menthe au lait 330ml">
+        <h3>Jus au 330 ml</h3>
+        <p>350 FCFA</p>
+        <button onclick="addToCart('Jus Bissap 330 ml',350)">Ajouter au panier</button>
+
+    <div class="menu-item">
+        <img src="image/tomi330.jpg">
+        <h3>Jus Tomi 330 ml</h3>
+        <p>350 FCFA</p>
+        <button onclick="addToCart('Jus Tomi 330 ml',350)">Ajouter au panier</button>
+    </div>
+
+    <!-- GROS BIDON 1L -->
+
+    <div class="menu-item">
+        <img src="image/citron1l.jpg">
+        <h3>Jus Citron 1 L</h3>
+        <p>2000 FCFA</p>
+        <button onclick="addToCart('Jus Citron 1 L',2000)">Ajouter au panier</button>
+    </div>
+
+    <div class="menu-item">
+        <img src="image/baobab1l.jpg">
+        <h3>Jus Baobab 1 L</h3>
+        <p>2000 FCFA</p>
+        <button onclick="addToCart('Jus Baobab 1 L',2000)">Ajouter au panier</button>
+    </div>
+
+    <div class="menu-item">
+        <img src="image/gnamakou1l.jpg">
+        <h3>Jus Gnamakou 1 L</h3>
+        <p>2000 FCFA</p>
+        <button onclick="addToCart('Jus Gnamakou 1 L',2000)">Ajouter au panier</button>
+    </div>
+
+    <div class="menu-item">
+        <img src="image/passion1l.jpg">
+        <h3>Jus Passion 1 L</h3>
+        <p>2000 FCFA</p>
+        <button onclick="addToCart('Jus Passion 1 L',2000)">Ajouter au panier</button>
+    </div>
+
+    <div class="menu-item">
+        <img src="image/bissap1l.jpg">
+        <h3>Jus Bissap 1 L</h3>
+        <p>1500 FCFA</p>
+        <button onclick="addToCart('Jus Bissap 1 L',1500)">Ajouter au panier</button>
+    </div>
+
+    <div class="menu-item">
+        <img src="image/tomi1l.jpg">
+        <h3>Jus Tomi 1 L</h3>
+        <p>1500 FCFA</p>
+        <button onclick="addToCart('Jus Tomi 1 L',1500)">Ajouter au panier</button>
+    </div>
+
+</div>
